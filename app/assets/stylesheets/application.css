@@ -13,3 +13,15 @@
  *= require_tree .
  *= require_self
  */
+
+ body {
+     background-image: url("bg.jpg")
+ }
+
+ .login{
+     background-color: whitesmoke;
+     padding: 2%;
+     width: 20%;
+     position: relative;
+     box-shadow: 0.5rem #8c00ff
+ }
