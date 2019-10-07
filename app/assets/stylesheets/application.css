@@ -15,7 +15,9 @@
  */
 
  body {
-     background-image: url("https://i.imgur.com/JbOMmPb.jpg")
+     background-image: url("https://i.imgur.com/JbOMmPb.jpg");
+     background-repeat: no-repeat;
+     background-size: cover;
  }
 
  .login{
