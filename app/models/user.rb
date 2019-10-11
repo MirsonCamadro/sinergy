@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-         belongs_to :community
-         has_many :fees
+         belongs_to :community 
+         has_many :fees, dependent: :destroy
          
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_10_220748) do
+ActiveRecord::Schema.define(version: 2019_10_11_140528) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -61,9 +61,12 @@ ActiveRecord::Schema.define(version: 2019_10_10_220748) do
     t.datetime "remember_created_at"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "community_id"
+    t.index ["community_id"], name: "index_users_on_community_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "fees", "users"
+  add_foreign_key "users", "communities"
 end
