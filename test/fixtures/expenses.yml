@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  community: one
+  name: MyString
+  description: MyString
+  value: 1
+
+two:
+  community: two
+  name: MyString
+  description: MyString
+  value: 1
