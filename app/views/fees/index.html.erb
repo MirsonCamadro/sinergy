@@ -10,11 +10,6 @@
         <%= expense.description %>
         <%= expense.value %>
     <% end %>
-<<<<<<< HEAD
-<h3> Presupuesto de la comunidad </h3>
-
-<%= @fees %>
-=======
 <h3> actas </h3>
     <% @user.community.acts.each do |act| %>
         <%= act.name %>
@@ -22,4 +17,3 @@
         <%= act.date %>
         <%= image_tag act.photo %>
     <% end %>
->>>>>>> development
