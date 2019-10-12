@@ -11,9 +11,9 @@
         <%= expense.value %>
     <% end %>
 <h3> actas </h3>
-    <% @user.community.acts.each do |act| %>
-        <%= act.name %>
-        <%= act.description %>
-        <%= act.date %>
-        <%= image_tag act.photo %>
+    <% @user.community.acts.each do |acts| %>
+        <%= acts.name %>
+        <%= acts.description %>
+        <%= acts.date %>
+        <%= image_tag acts.photo %>
     <% end %>
