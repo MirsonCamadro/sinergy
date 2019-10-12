@@ -1,6 +1,15 @@
+<h3> Email  </h3>
+    <%= @user.email %>
+</br>
+<h3> Comunidad  </h3>
+    <%= @user.community.name %>
+</br>
+<h3> Gastos de la comunidad  </h3>
+    <% @user.community.expenses.each do |expense| %>
+        <%= expense.name %>
+        <%= expense.description %>
+        <%= expense.value %>
+    <% end %>
+<h3> Presupuesto de la comunidad </h3>
 
-<%= @user.email %>
-
-<%= @user.community.name %>
-
-
+<%= @fees %>

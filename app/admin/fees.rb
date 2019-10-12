@@ -17,7 +17,7 @@ ActiveAdmin.register Fee do
   index do
     column :id 
     column :email do |user|
-      user.user
+      user.user.email
     end
     column :value
     column :payed
@@ -27,7 +27,9 @@ ActiveAdmin.register Fee do
 
   form do |f|
     inputs 'Asignar cuota' do
-     input :user
+     input :user do |user_email|
+      user_email.user.email
+     end
      input :value 
      input :payed do
         User.email

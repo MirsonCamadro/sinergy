@@ -3,7 +3,8 @@ class FeesController < ApplicationController
 
     def index
         @user = current_user
-        @fee = current_user.fees
+        users = User.all
+        @fees = users.fees
     end
     
     

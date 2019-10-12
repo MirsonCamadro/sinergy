@@ -16,7 +16,9 @@ ActiveAdmin.register Expense do
   # end
 
   index do
-    column :community_id
+    column :community_id do |community_name|
+        community_name.community.name
+      end
     column :name
     column :description
     column :value
