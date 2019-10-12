@@ -3,7 +3,6 @@ class FeesController < ApplicationController
 
     def index
         @user = current_user
-        @fee = current_user.fees
     end
     
     

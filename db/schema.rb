@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_11_140528) do
+ActiveRecord::Schema.define(version: 2019_10_12_155754) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -24,6 +24,17 @@ ActiveRecord::Schema.define(version: 2019_10_11_140528) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author_type_and_author_id"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource_type_and_resource_id"
+  end
+
+  create_table "acts", force: :cascade do |t|
+    t.integer "community_id", null: false
+    t.string "name"
+    t.string "description"
+    t.date "date"
+    t.string "photo"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["community_id"], name: "index_acts_on_community_id"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -42,6 +53,16 @@ ActiveRecord::Schema.define(version: 2019_10_11_140528) do
     t.string "name"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "expenses", force: :cascade do |t|
+    t.integer "community_id", null: false
+    t.string "name"
+    t.string "description"
+    t.integer "value"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["community_id"], name: "index_expenses_on_community_id"
   end
 
   create_table "fees", force: :cascade do |t|
@@ -67,6 +88,8 @@ ActiveRecord::Schema.define(version: 2019_10_11_140528) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "acts", "communities"
+  add_foreign_key "expenses", "communities"
   add_foreign_key "fees", "users"
   add_foreign_key "users", "communities"
 end
