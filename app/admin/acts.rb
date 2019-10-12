@@ -1,46 +1,38 @@
-ActiveAdmin.register Fee do
+ActiveAdmin.register Act do
 
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :user_id, :value, :payed, :community
+  permit_params :community_id, :name, :description, :date, :photo
   #
   # or
   #
   # permit_params do
-  #   permitted = [:user_id, :value, :payed]
+  #   permitted = [:community_id, :name, :description, :date, :photo]
   #   permitted << :other if params[:action] == 'create' && current_user.admin?
   #   permitted
   # end
   index do
     column :id 
-    column :email do |user|
-      user.user.email
-    end
-    column :community do |user|
-      user.user.community
-    end
-    column :value
-    column :payed
+    column :name
+    column :description 
+    column :date 
+    column :photo 
     actions
-    link_to 'root'
   end
 
   form do |f|
-    inputs 'Asignar cuota' do
-     input :user do |user_email|
-      user_email.user.email
-     end
-     input :value 
-     input :payed do
-        User.email
-     end  
+    inputs 'Agregar nueva acta' do
+      input :name
+      input :description 
+      input :date 
+      input :photo 
+      input :community_id
     end
     actions
    end
 
-   
   
 end

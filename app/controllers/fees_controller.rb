@@ -3,8 +3,11 @@ class FeesController < ApplicationController
 
     def index
         @user = current_user
+<<<<<<< HEAD
         users = User.all
         @fees = users.fees
+=======
+>>>>>>> development
     end
     
     
