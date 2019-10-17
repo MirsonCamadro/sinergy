@@ -1,0 +1,7 @@
+<h3> actas </h3>
+    <% @user.community.acts.each do |acts| %>
+        <%= acts.name %>
+        <%= acts.description %>
+        <%= acts.date %>
+        <%= image_tag acts.photo, size: "200x300" %>
+    <% end %>
