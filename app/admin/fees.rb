@@ -1,11 +1,10 @@
 ActiveAdmin.register Fee do
-
   # See permitted parameters documentation:
   # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :user_id, :value, :payed, :community
+  permit_params :user_id, :value, :payed, :community, :fees_date
   #
   # or
   #
@@ -24,6 +23,9 @@ ActiveAdmin.register Fee do
     end
     column :value
     column :payed
+    column :fees_date do |fee|
+      fee.fees_date.strftime("%m-%Y")
+    end
     actions
     link_to 'root'
   end
@@ -33,7 +35,8 @@ ActiveAdmin.register Fee do
      input :user do |user_email|
       user_email.user.email
      end
-     input :value 
+     input :value
+     input :fees_date, as: :date_select, discard_day: true
      input :payed do
         User.email
      end  
@@ -41,6 +44,5 @@ ActiveAdmin.register Fee do
     actions
    end
 
-   
   
 end

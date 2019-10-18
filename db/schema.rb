@@ -10,11 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-<<<<<<< HEAD
-ActiveRecord::Schema.define(version: 2019_10_11_190733) do
-=======
-ActiveRecord::Schema.define(version: 2019_10_12_155754) do
->>>>>>> development
+ActiveRecord::Schema.define(version: 2019_10_18_153749) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -75,6 +71,7 @@ ActiveRecord::Schema.define(version: 2019_10_12_155754) do
     t.boolean "payed"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.datetime "fees_date"
     t.index ["user_id"], name: "index_fees_on_user_id"
   end
 
@@ -92,10 +89,7 @@ ActiveRecord::Schema.define(version: 2019_10_12_155754) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-<<<<<<< HEAD
-=======
   add_foreign_key "acts", "communities"
->>>>>>> development
   add_foreign_key "expenses", "communities"
   add_foreign_key "fees", "users"
   add_foreign_key "users", "communities"
