@@ -6,5 +6,7 @@ class User < ApplicationRecord
 
          belongs_to :community 
          has_many :fees, dependent: :destroy
+  
+
          
 end

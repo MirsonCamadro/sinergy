@@ -13,11 +13,19 @@
   </head>
 
   <body>
-    <%= render 'shared/navbar' %>
-    <%= render 'shared/sidebar2' %>
-    <%= render 'shared/flash_messages' %> 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
-      <%= yield %>
-    </main>
+      <% if user_signed_in? %>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+         <%= render 'shared/navbar' %>
+         <%= render 'shared/flash_messages' %>
+         <%= render 'shared/sidebar' %>
+         <%= yield %>
+        </main>
+      <% else%>
+        <main class="container-fluid">
+          <%= render 'shared/navbar' %>
+          <%= render 'shared/flash_messages' %>  
+          <%= yield %>
+        </main>
+      <% end %>
   </body>
 </html>

@@ -1,6 +1,5 @@
 <h3> MIS CUTOTAS  </h3>
-    <% @user.community.expenses.each do |expense| %>
-        <%= expense.name %>
-        <%= expense.description %>
-        <%= expense.value %>
-    <% end %>
+    <% @user.fees.each do |fees| %>
+        <%= fees.value %>
+        <%= fees.payed %>
+<% end %>
