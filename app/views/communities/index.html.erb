@@ -4,16 +4,10 @@
 <h3> Comunidad  </h3>
     <%= @user.community.name %>
 </br>
-<h3> Gastos de la comunidad  </h3>
+<h3> Presupuesto para este mes </h3>
     <% @user.community.expenses.each do |expense| %>
         <%= expense.name %>
         <%= expense.description %>
         <%= expense.value %>
     <% end %>
-<h3> actas </h3>
-    <% @user.community.acts.each do |acts| %>
-        <%= acts.name %>
-        <%= acts.description %>
-        <%= acts.date %>
-        <%= image_tag acts.photo, size: "200x300" %>
-    <% end %>
+

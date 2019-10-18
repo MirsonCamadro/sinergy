@@ -3,6 +3,8 @@ class CommunitiesController < ApplicationController
 
   def index
       @user = current_user
+      @users = User.all
+      @community = @user.community_id
   end
   
   

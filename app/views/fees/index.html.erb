@@ -1,5 +1,7 @@
 <h3> MIS CUTOTAS  </h3>
     <% @user.fees.each do |fees| %>
-        <%= fees.value %>
-        <%= fees.payed %>
+        VALOR CUOTA<%= fees.value %>
+        FECHA DE LA CUOTA<%= fees.fees_date.strftime("%m-%Y") %>
+        PAGADA? <%= fees.payed %>
+        </br>
 <% end %>
