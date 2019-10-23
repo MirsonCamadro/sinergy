@@ -1,0 +1,19 @@
+<% @user.community.acts.each do |acts| %>
+    <div class="card mb-3 border-success bg-dark text-white" style="max-width: 540px;">
+        <div class="row">
+            <div class="col-md-4">
+                <%= image_tag acts.photo, size: "200x250", class:"card-img" %>
+            </div>
+            <div class="col-md-8">
+                <div class="card-body">
+                    <h5 class="card-title"><%= acts.name %></h5>
+                    <hr>
+                    <p class="card-text"><%= acts.description %></p>
+                </div>
+            </div>          
+        </div>
+        <div class="card-footer bg-secondary justify-content-end">
+         <small class="text-white"><%= acts.date %></small>
+        </div>
+    </div>
+<% end %>

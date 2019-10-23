@@ -1,11 +1,2 @@
-    <h3> actas </h3>
-    <% @user.community.acts.each do |acts| %>
-        <%= acts.name %>
-        <%= acts.description %>
-        <%= acts.date %>
-        <%= image_tag acts.photo, size: "200x300" %>
-    <% end %>
-     
-
-
-
+<h3><i class="fas fa-file-contract"></i> actas </h3>  
+<%= render "acts"%>
