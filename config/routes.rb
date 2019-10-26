@@ -3,6 +3,11 @@ Rails.application.routes.draw do
   get 'communities/index'
   get 'acts/index'
   get 'fees/index'
+  resources :billings, only: [] do
+    collection do
+      get 'pre_pay'
+    end
+  end
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   devise_for :users, controllers: { registrations:

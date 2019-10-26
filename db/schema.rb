@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_10_26_184214) do
+ActiveRecord::Schema.define(version: 2019_10_26_184341) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -151,6 +151,8 @@ ActiveRecord::Schema.define(version: 2019_10_26_184214) do
     t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "billing_id"
+    t.index ["billing_id"], name: "index_orders_on_billing_id"
     t.index ["fee_id"], name: "index_orders_on_fee_id"
     t.index ["user_id"], name: "index_orders_on_user_id"
   end
@@ -182,6 +184,7 @@ ActiveRecord::Schema.define(version: 2019_10_26_184214) do
   add_foreign_key "forum_subscriptions", "users"
   add_foreign_key "forum_threads", "forum_categories"
   add_foreign_key "forum_threads", "users"
+  add_foreign_key "orders", "billings"
   add_foreign_key "orders", "fees"
   add_foreign_key "orders", "users"
   add_foreign_key "users", "communities"
