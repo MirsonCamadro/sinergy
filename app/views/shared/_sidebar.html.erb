@@ -5,15 +5,16 @@
   <nav id="sidebar" class="sidebar-wrapper">
     <div class="sidebar-content">
       <div class="sidebar-brand">
-        <a href="/communities/index"> <%= link_to image_tag("https://svgshare.com/i/FNW.svg", alt:"Brand", size: "150x50"), root_path, :class=>'navbar-brand' %></a>
+        <a href="/communities/index">
+         <%= link_to image_tag("https://svgshare.com/i/FNW.svg", alt:"Brand", size: "150x50"), root_path, :class=>'navbar-brand' %>
+         </a>
         <div id="close-sidebar">
           <i class="fas fa-times"></i>
         </div>
       </div>
       <div class="sidebar-header">
         <div class="user-pic">
-          <img class="img-responsive img-rounded" src="https://raw.githubusercontent.com/azouaoui-med/pro-sidebar-template/gh-pages/src/img/user.jpg"
-            alt="User picture">
+          <%= image_tag @user.image.variant(resize: "150x50"), class:'img-responsive img-rounded'  %>
         </div>
         <div class="user-info">
           <span class="user-name"><%= @user.email %>
