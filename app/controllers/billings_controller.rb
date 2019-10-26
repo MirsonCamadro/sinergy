@@ -1,2 +1,4 @@
 class BillingsController < ApplicationController
-end
+    def pre_pay
+    end
+   end

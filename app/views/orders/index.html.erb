@@ -1,0 +1,33 @@
+<div class="container">
+  <% if @orders.count > 0 %>
+    <table class="table">
+    <thead>
+      <tr>
+        <th>Producto</th>
+        <th>Valor</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each do |order| %>
+        <tr>
+          <td> <%= order.product.name %> </td>
+          <td> <%= order.price %></td>
+        </tr>
+      <% end %>
+      <tr class="table-dark">
+      <td></td>
+      <td></td>
+      <td><strong>Total de la compra:</strong></td>
+      <td><strong><%= @total %></strong></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <%= link_to 'Limpiar carro', clean_orders_path, class: 'btn btn-outline-danger'  %>
+  <%= link_to 'Confirmar compra', pre_pay_billings_path, class: 'btn btn-success float-right' %> 
+  
+  <% else %>
+    <p>No tienes productos en tu carro de compra.</p>
+  <% end %>
+
+</div>
