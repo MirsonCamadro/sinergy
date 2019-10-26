@@ -1,15 +1,21 @@
-<h3> Email aca esta cummunities </h3>
-    <%= @user.email %>
-</br>
-<h3> Comunidad  </h3>
-    <%= @user.community.name %>
-</br>
-<h3> Presupuesto para este mes </h3>
-    <% @user.community.expenses.each do |expense| %>
-        <%= expense.name %>
-        <%= expense.description %>
-        <%= expense.value %>
-    <% end %>
 
+<div class="row">
+    <div class="col-10">
+    </div>
+    <div class="col-2">
+        <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+        <div class="card-header">Dinero Recaudado</div>
+        <div class="card-body">
+            <p class="card-text"><%= number_to_currency(@payed_fees.inject  {|sum, fee| sum + fee}, precision: 0) %></p>
+        </div>
+        </div>
 
+        <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
+        <div class="card-header">Deuda de la comunidad</div>
+        <div class="card-body">
+            <p class="card-text"><%= number_to_currency(@unpayed_fees.inject  {|sum, fee| sum + fee}, precision: 0) %></p>
+        </div>
+        </div>
+    </div>
 
+</div>
