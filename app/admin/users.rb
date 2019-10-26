@@ -5,7 +5,7 @@ ActiveAdmin.register User do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
- permit_params :email, :password
+ permit_params :email, :password, :image
   #
   # or
   #
@@ -18,6 +18,7 @@ ActiveAdmin.register User do
     column :id 
     column :email
     column :created_at 
+    column :image
     actions
   end
 
@@ -25,6 +26,7 @@ ActiveAdmin.register User do
    inputs 'Agregar nuevo usuario' do
     input :email
     input :password 
+    input :image
    end
    actions
   end

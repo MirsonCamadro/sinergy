@@ -13,17 +13,3 @@
 
 
 
-
-<%# Accediendo a la imagen %>
-<p>
-<strong>Image:</strong>
-<%# <%= image_tag @user.image %> %>
-</p>
-<%# Accediendo a la imagen: Versión mejorada %>
-<% if @user.image.attached? %>
- <p>
- <strong>Image:</strong>
- <br>
- <%# <%= image_tag @user.image %> %>
- </p>
-<% end %>
