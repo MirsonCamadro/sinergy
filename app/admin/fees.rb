@@ -32,8 +32,8 @@ ActiveAdmin.register Fee do
 
   form do |f|
     inputs 'Asignar cuota' do
-     input :user do |user_email|
-      user_email.user.email
+     input :user do
+       User.email 
      end
      input :value
      input :fees_date, as: :date_select, discard_day: true
@@ -44,5 +44,17 @@ ActiveAdmin.register Fee do
     actions
    end
 
+   form do |f|
+    inputs 'Agregar una nueva cuota' do
+      f.input :user_id,
+        label: 'Usuario',
+        as: :select,
+        collection: User.pluck(:email, :id)
+      input :value
+      input :fees_date, as: :date_select, discard_day: true
+      input :payed
+      end
+      actions
+   end
   
 end
