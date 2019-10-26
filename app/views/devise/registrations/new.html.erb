@@ -9,6 +9,11 @@
   </div>
 
   <div class="field">
+    <%= f.label :image %>
+    <%= f.file_field :image %>
+  </div>
+
+  <div class="field">
     <%= f.label :community %><br />
     <%= f.text_field :community, autocomplete: "Select community" %>
   </div>
