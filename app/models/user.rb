@@ -5,7 +5,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   belongs_to :community 
+  
   has_many :fees, dependent: :destroy
+  has_many :orders
+
   has_one_attached :image
   scope :by_community, ->(community_id) { where("community_id = ?", community_id)}
 
@@ -16,7 +19,6 @@ class User < ApplicationRecord
       user.fees.unpayed.each do |fee|
         unpayed_fees << fee.value
       end
-
     end
     return unpayed_fees
   end
@@ -28,7 +30,6 @@ class User < ApplicationRecord
       user.fees.payed_yes.each do |fee|
         payed_fees << fee.value
       end
-
     end
     return payed_fees
   end

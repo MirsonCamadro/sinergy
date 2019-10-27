@@ -5,7 +5,6 @@
       <th scope="col">Fecha cuota</th>
       <th scope="col">Valor cuota</th>
       <th scope="col">Estado de pago</th>
-      <th scope="col">Agregar al carro</th>
     </tr>
   </thead>
   <tbody>
@@ -14,10 +13,13 @@
 		<td><%= fees.fees_date.strftime("%m - %Y") %></td>
 		<td><%= number_to_currency(fees.value, precision: 0) %></td>
 		<td><%= fees.payed %></td>
-    <% if fees.payed == false %>
-      <td><%= link_to "Agregar al carro", fee_orders_path(fees), class: 'btn btn-success', method: :post  %></td>
-    <% end %>
 		</tr>
 	<% end %>
   </tbody>
 </table>
+
+<div class="card text-white bg-success mb-3" style="max-width: 18rem;">
+  <div class="card-header">Pagar</div>
+  <div class="card-body">
+    <a class="nav-link" href="<%= orders_path %>">Mi carro <span class="sr-only">(current)</span></a>
+</div>
