@@ -12,6 +12,7 @@ class Order < ApplicationRecord
       item[:sku] = order.id.to_s
       item[:price] = order.price.to_s
       item[:currency] = 'USD'
+      item[:quantity] = 1
       item
     end
   end
