@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.destroy_all
 Community.destroy_all
+Act.destroy_all
+Fee.destroy_all
+Expense.destroy_all
 
 
 AdminUser.create!(
