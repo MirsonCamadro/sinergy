@@ -5,5 +5,9 @@ class ActsController < ApplicationController
         @user = current_user    
     end
 
+    def show
+        @act = Act.find(params[:id])
+    end
+
     
 end

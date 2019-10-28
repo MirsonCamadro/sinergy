@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   get 'acts/index'
   get 'fees/index'
 
+  resources :acts, only: [:index, :show]
+
   resources :fees, only: :index do
     resources :orders, only: :create
   end

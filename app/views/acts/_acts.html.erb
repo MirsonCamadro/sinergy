@@ -2,7 +2,9 @@
     <div class="card mb-3 border-success bg-dark text-white" style="max-width: 540px;">
         <div class="row">
             <div class="col-md-4">
-                <%= image_tag acts.photo, size: "200x250", class:"card-img" %>
+                <%= link_to acts, data: {remote: true} do %>
+                    <%= image_tag acts.photo, size: "200x250", class:"card-img" %>
+                <% end %>
             </div>
             <div class="col-md-8">
                 <div class="card-body">
