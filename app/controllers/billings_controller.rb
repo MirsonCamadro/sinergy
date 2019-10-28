@@ -16,7 +16,7 @@ class BillingsController < ApplicationController
 
     def execute
         if Billing.execute_payment(current_user, params[:paymentId], params[:PayerID])
-        redirect_to root_path, notice: "La compra se realizó con éxito!"
+        redirect_to root_path, notice: "El pago se realizó con éxito!"
         else
         render plain: "No se puedo generar el cobro en PayPal."
         end

@@ -6,9 +6,9 @@ class OrdersController < ApplicationController
       o = Order.find_or_create_by(user: current_user, fee: p, payed: false, price: p.value)
   
       if o.save
-        redirect_to fees_path, notice: "El producto ha sido agregado al carro."
+        redirect_to fees_path, notice: "Tu cuota ha sido agregada al carro."
       else
-        redirect_to fees_path, alert: "El producto NO ha sido agregado al carro"
+        redirect_to fees_path, alert: "Tu cuota NO ha sido agregada al carro"
       end
     end
   
