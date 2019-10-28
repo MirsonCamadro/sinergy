@@ -215,6 +215,8 @@ ActiveAdmin.setup do |config|
   #
   # To load a javascript file:
   #   config.register_javascript 'my_javascript.js'
+    config.register_javascript 'chart.js/dist/Chart.js'
+    config.register_javascript 'chartkick'
 
   # == CSV options
   #
