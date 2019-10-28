@@ -1,6 +1,16 @@
 
 <div class="row">
     <div class="col-8">
+        <div class="card">
+        <div class="card-header">
+            <h3><i class="fas fa-chart-pie"></i> Cuotas pagadas y no pagadas</h3>
+        </div>
+        <div class="card-body">
+            <p class="card-text"><%= render 'shared/chart' %></p>
+            <a href="/fees/index" class="btn btn-primary"><i class="fas fa-wallet"></i> Mis cuotas</a>
+        </div>
+        </div>
+        
     </div>
     <div class="col-4">
         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
@@ -17,7 +27,5 @@
         </div>
         </div>
     </div>
-
 </div>
 
-<%= render 'shared/chart'%>
