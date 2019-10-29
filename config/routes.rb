@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'acts/index'
   get 'fees/index'
 
+  
   resources :acts, only: [:index, :show]
 
   resources :fees, only: :index do
@@ -25,6 +26,8 @@ Rails.application.routes.draw do
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
+  mount SimpleDiscussion::Engine => "/forum"
+  
   devise_for :users, controllers: { registrations:
     "users/registrations" }
     

@@ -30,6 +30,8 @@ gem 'paypal-sdk-rest'
 gem 'chartkick'
 # Use groupdate
 gem 'groupdate'
+#simple discussion
+gem 'simple_discussion'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 

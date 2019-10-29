@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  include SimpleDiscussion::ForumUser
+
   belongs_to :community 
   
   has_many :fees, dependent: :destroy
@@ -12,6 +14,10 @@ class User < ApplicationRecord
   has_one_attached :image
   scope :by_community, ->(community_id) { where("community_id = ?", community_id)}
 
+  def name
+    "#{email}"
+  end
+  
   def self.unpayed_fees_by_community(community_id)
     unpayed_fees = []
     users = by_community(community_id)
