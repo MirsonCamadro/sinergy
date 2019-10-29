@@ -13,16 +13,23 @@
     </div>
     <div class="col-4">
         <div class="card text-white bg-success mb-3" style="max-width: 18rem;">
-        <div class="card-header">Dinero Recaudado</div>
+        <div class="card-header">Dinero disponible</div>
         <div class="card-body">
-            <p class="card-text"><%= number_to_currency(@payed_fees.inject  {|sum, fee| sum + fee}, precision: 0) %></p>
+            <p class="card-text"><%= number_to_currency(@available, precision: 0) %></p>
+        </div>
+        </div>
+
+        <div class="card text-white bg-warning mb-3" style="max-width: 18rem;">
+        <div class="card-header">Dinero Recaudado en total</div>
+        <div class="card-body">
+            <p class="card-text"><%= number_to_currency(@total_payed_fees, precision: 0) %></p>
         </div>
         </div>
 
         <div class="card text-white bg-danger mb-3" style="max-width: 18rem;">
         <div class="card-header">Deuda de la comunidad</div>
         <div class="card-body">
-            <p class="card-text"><%= number_to_currency(@unpayed_fees.inject  {|sum, fee| sum + fee}, precision: 0) %></p>
+            <p class="card-text"><%= number_to_currency(@total_unpayed_fees, precision: 0) %></p>
         </div>
         </div>
     </div>
