@@ -17,7 +17,7 @@
           <td><%= number_to_currency(fees.value, precision: 0) %></td>
           <td><%= fees.payed %></td>
           <% if fees.payed == false %>
-            <td><%= link_to "Agregar al carro", fee_orders_path(fees), class: 'btn btn-success', method: :post  %></td>
+            <td class= 'btn btn-success btn_payed'  data-fee="<%= fees.id %>">Agregar al carro</td>
           <% else %> 
             <td> Cuota Pagada </td>
           <% end %>
@@ -36,3 +36,18 @@
     </div>
   </div>
 </div>
+
+<script>
+$(".btn_payed").on('click', function(e){
+  e.preventDefault()
+   var fee_id = $(this).data('fee')
+   $(this).text('Cuota en proceso de pago')
+    $.ajax({
+    beforeSend: function(xhr) {xhr.setRequestHeader('X-CSRF-Token',  $('meta[name="csrf-token"]').attr('content'))},
+    url: '/fees/'+ fee_id + '/orders',
+    type: 'POST',
+    dataType: 'script'
+    })
+  })
+</script>
+

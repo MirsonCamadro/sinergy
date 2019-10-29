@@ -1,12 +1,16 @@
 class OrdersController < ApplicationController
     before_action :authenticate_user!
+    
   
     def create
       p = Fee.find(params[:fee_id])
       o = Order.find_or_create_by(user: current_user, fee: p, payed: false, price: p.value)
   
       if o.save
-        redirect_to fees_path, notice: "Tu cuota ha sido agregada al carro."
+        respond_to do |format|
+          format.js { flash.now[:notice] = "Tu cuota ha sido agregada al carro" }
+        end
+        
       else
         redirect_to fees_path, alert: "Tu cuota NO ha sido agregada al carro"
       end
