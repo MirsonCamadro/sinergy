@@ -3,6 +3,8 @@ class Order < ApplicationRecord
   belongs_to :fee
   belongs_to :billing, optional: true
 
+  validates :price, numericality: true
+
   scope :cart, (-> {where(payed: false)})
 
   def self.to_paypal_items

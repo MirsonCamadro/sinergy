@@ -13,7 +13,7 @@ Expense.destroy_all
 
 
 AdminUser.create!(
-    email: 'admin@sinergy.com', 
+    email: 'admin@admin.com', 
     password: '123123',
     password_confirmation:'123123'
 ) 

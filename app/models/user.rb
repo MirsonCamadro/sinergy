@@ -4,6 +4,10 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  validates :email, uniqueness: true
+  validates :password, length: { in: 6..20 }
+
+
   include SimpleDiscussion::ForumUser
 
   belongs_to :community 
@@ -12,6 +16,7 @@ class User < ApplicationRecord
   has_many :orders
 
   has_one_attached :image
+  
   scope :by_community, ->(community_id) { where("community_id = ?", community_id)}
 
   def name
