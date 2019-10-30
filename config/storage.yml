@@ -14,11 +14,11 @@ local:
 #   region: us-east-1
 #   bucket: your_own_bucket
 amazon:
-service: S3
-access_key_id: <%= ENV['AWS_ACCESS_KEY'] %>
-secret_access_key: <%= ENV['AWS_SECRET_KEY'] %>
-region: us-east-1
-bucket: <%= ENV['sinergyapp'] %>
+  service: S3
+  access_key_id: <%= ENV['AWS_ACCESS_KEY'] %>
+  secret_access_key: <%= ENV['AWS_SECRET_KEY'] %>
+  region: us-east-1
+  bucket: <%= ENV['sinergyapp'] %>
 
 # Remember not to checkin your GCS keyfile to a repository
 # google:
