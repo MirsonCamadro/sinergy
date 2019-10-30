@@ -10,6 +10,7 @@ Community.destroy_all
 Act.destroy_all
 Fee.destroy_all
 Expense.destroy_all
+User.destroy_all
 
 
 AdminUser.create!(
