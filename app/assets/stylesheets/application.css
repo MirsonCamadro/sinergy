@@ -21,11 +21,9 @@
      background-size: cover;
  }
 
- .login{
-     background-color: whitesmoke;
-     padding: 2%;
-     width: 20%;
-     position: relative;
-     box-shadow: 0.5rem #8c00ff;
- }
 
+ .login-purple-pink {
+    background: linear-gradient(145deg, #3F51B5, #E91E63);
+    position: relative;
+    box-shadow: 0.5rem #8c00ff;
+}
