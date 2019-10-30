@@ -1,5 +1,7 @@
 Sinergy Trello: https://trello.com/b/n82PGU6F/sinergy
+
 Sinergy draw.io: https://drive.google.com/file/d/1KikgaoW223daV6gxQjj97OxSYco1_sMA/view?usp=sharing
+
 Sinergy heroku: https://shielded-oasis-35248.herokuapp.com/
 
 Sinergy es una app web para organizar comunidades sin necesidad de externos.
