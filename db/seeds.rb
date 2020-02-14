@@ -18,3 +18,7 @@ AdminUser.create!(
     password: '123123',
     password_confirmation:'123123'
 ) 
+
+Community.create!(
+    name: 'los volaitos'
+)
