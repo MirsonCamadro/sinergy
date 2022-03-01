@@ -24,7 +24,7 @@ gem 'activeadmin'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'devise', git: 'https://github.com/plataformatec/devise.git'
 # Use Active Storage variant
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 # Use paypal
 gem 'paypal-sdk-rest'
 # Use chartkick
